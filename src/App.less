@@ -1,0 +1,108 @@
+// @import '~antd/dist/antd.dark.less'; // 引入官方提供的暗色 less 样式入口文件
+// @import '~antd/dist/antd.compact.less'; // 引入官方提供的紧凑 less 样式入口文件
+
+/* === 配置 less 变量文件 === */
+// 建立一个单独的 less 变量文件，引入这个文件覆盖 antd.less 里的变量。
+// 注意，这种方式已经载入了所有组件的样式，不需要也无法和按需加载插件 babel-plugin-import 的 style 属性一起使用。
+@import '~antd/lib/style/themes/default.less';
+@import '~antd/dist/antd.less'; // 引入官方提供的 less 样式入口文件
+
+.class_home_head {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  .head_fixed {
+    z-index: 1;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9 !important;
+    background: linear-gradient(330deg, #69bdb7 0%, #4c9bb8 100%);
+
+    .logo {
+      width: 170px;
+      img {
+        width: 100%;
+      }
+    }
+
+    .class_head_menu_icon {
+      height: 50px;
+    }
+
+    .ant-menu {
+      max-width: 700px;
+      border: none;
+      font-size: 28px;
+      color: #fff;
+      background: transparent;
+
+      flex: 1;
+      justify-content: space-between;
+
+      &-item {
+        a {
+          color: #fff;
+
+          &:hover {
+            color: #fff;
+          }
+        }
+
+        &:hover {
+          color: #fff;
+
+          &::after {
+            border-color: #fff !important;
+          }
+        }
+
+        &-active {
+          color: #fff !important;
+
+          &::after {
+            border-color: #fff;
+          }
+        }
+
+        &-selected {
+          color: #fff !important;
+          background-color: rgb(7, 124, 124);
+
+          &::after {
+            border-color: #fff !important;
+          }
+        }
+      }
+    }
+  }
+
+  .class_home_contents {
+    height: 100%;
+    // .class_home_drawer_div {
+    //   // height: 200px;
+    //   // padding: 48px;
+    //   // overflow: hidden;
+    //   // text-align: center;
+    //   // background: #fafafa;
+    //   // border: 1px solid #ebedf0;
+    //   // border-radius: 2px;
+    // }
+    .home_content {
+      background-color: white(68, 204, 204);
+    }
+    .class_home_drawer {
+      padding-top: 110px;
+      background-color: white;
+    }
+    // .ant-drawer {
+    //   // position: fixed !important;
+    //   // position: relative;
+    //   // margin-top: 10vh !important;
+    //   // padding-top: 30px !important;
+    // }
+  }
+}
